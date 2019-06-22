@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLTelaBuscarUsuarioController">
+   <children>
+      <Pane prefHeight="382.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="grdBuscarAluno" layoutX="3.0" layoutY="43.0" onMouseClicked="#tableSelect" prefHeight="434.0" prefWidth="375.0">
+              <columns>
+                <TableColumn fx:id="clmnId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="clmnNome" prefWidth="297.0" text="NOME" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txtBuscarAluno" layoutX="4.0" layoutY="10.0" prefHeight="25.0" prefWidth="277.0" promptText="Digite o nome do aluno" />
+            <Button fx:id="btnExcluir" layoutX="498.0" layoutY="447.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="85.0" text="EXCLUIR" />
+            <Button fx:id="btnBuscar" layoutX="293.0" layoutY="10.0" mnemonicParsing="false" onAction="#buscar" prefHeight="25.0" prefWidth="85.0" text="BUSCAR " />
+            <Button fx:id="btnAtualizar" layoutX="601.0" layoutY="447.0" mnemonicParsing="false" onAction="#atualizar" prefHeight="25.0" prefWidth="85.0" text="ATUALIZAR " />
+            <Button fx:id="btnVoltar" layoutX="389.0" layoutY="447.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="85.0" text="VOLTAR" />
+            <Label layoutX="387.0" layoutY="14.0" text="NOME:" />
+            <TextField fx:id="txtNome" layoutX="432.0" layoutY="10.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="49.0" text="RG:" />
+            <TextField fx:id="txtRg" layoutX="432.0" layoutY="45.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="84.0" text="CPF:" />
+            <TextField fx:id="txtCpf" layoutX="432.0" layoutY="80.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="152.0" text="E-MAIL:" />
+            <TextField fx:id="txtEmail" layoutX="432.0" layoutY="149.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="188.0" text="FONE:" />
+            <TextField fx:id="txtTelefone" layoutX="432.0" layoutY="184.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="223.0" text="RUA:" />
+            <TextField fx:id="txtRua" layoutX="432.0" layoutY="219.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="257.0" text="Nº.:" />
+            <TextField fx:id="txtNumero" layoutX="432.0" layoutY="253.0" prefHeight="25.0" prefWidth="63.0" />
+            <Label layoutX="505.0" layoutY="257.0" text="CEP:" />
+            <TextField fx:id="txtCep" layoutX="535.0" layoutY="253.0" prefHeight="25.0" prefWidth="150.0" />
+            <Label layoutX="387.0" layoutY="326.0" text="CIDADE:" />
+            <TextField fx:id="txtCidade" layoutX="433.0" layoutY="322.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="361.0" text="ESTADO:" />
+            <ComboBox fx:id="cbEstado" layoutX="436.0" layoutY="360.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="396.0" text="STATUS:" />
+            <ComboBox fx:id="cbStatus" layoutX="436.0" layoutY="392.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="291.0" text="BAIRRO:" />
+            <TextField fx:id="txtBairro" layoutX="431.0" layoutY="287.0" prefHeight="25.0" prefWidth="253.0" />
+            <Label layoutX="387.0" layoutY="118.0" text="RA:" />
+            <TextField fx:id="txtRa" layoutX="433.0" layoutY="115.0" prefHeight="25.0" prefWidth="253.0" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

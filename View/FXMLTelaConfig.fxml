@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLTelaConfigController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu fx:id="mnAluno" mnemonicParsing="false" text="ALUNO">
+            <items>
+              <MenuItem fx:id="mnCadastrarAluno" mnemonicParsing="false" onAction="#cadAluno" text="CADASTRAR" />
+                  <MenuItem fx:id="mnBuscarAluno" mnemonicParsing="false" onAction="#buscarAluno" text="GERENCIAR" />
+            </items>
+          </Menu>
+          <Menu fx:id="mnLivros" mnemonicParsing="false" text="LIVROS">
+            <items>
+              <MenuItem fx:id="mnCadastrarLivro" mnemonicParsing="false" onAction="#cadLivro" text="CADASTRAR" />
+                  <MenuItem fx:id="mnBuscarLivros" mnemonicParsing="false" onAction="#buscarLivro" text="GERENCIAR" />
+            </items>
+          </Menu>
+            <Menu fx:id="mnEmprestimo" mnemonicParsing="false" text="EMPRÉSTIMO ">
+               <items>
+                  <MenuItem fx:id="mnEmpLivro" mnemonicParsing="false" onAction="#empLivro" text="CADASTRAR" />
+                  <MenuItem fx:id="mnBuscarEmp" mnemonicParsing="false" onAction="#buscarEmprestimo" text="BAIXAR" />
+               </items>
+            </Menu>
+          <Menu fx:id="mnReserva" mnemonicParsing="false" text="RESERVA">
+            <items>
+              <MenuItem fx:id="mnFazerReserva" mnemonicParsing="false" onAction="#fazReserva" text="CADASTRAR" />
+                  <MenuItem fx:id="mnBuscarReserva" mnemonicParsing="false" onAction="#buscarReserva" text="BAIXAR / EFETIVAR" />
+            </items>
+          </Menu>
+            <Menu fx:id="mnRelatórios" mnemonicParsing="false" text="RELATÓRIOS">
+               <items>
+                  <MenuItem fx:id="mnAlunosCadastrados" mnemonicParsing="false" onAction="#alunosCadastrados" text="ALUNOS CADASTRADOS" />
+                  <MenuItem fx:id="mnAlunosBloqueados" mnemonicParsing="false" onAction="#alunosBloqueados" text="ALUNOS BLOQUEADOS" />
+                  <MenuItem fx:id="mnLivrosCadastrados" mnemonicParsing="false" onAction="#livrosCadastrados" text="LIVROS CADASTRADOS" />
+                  <MenuItem fx:id="mnLivrosDisponiveis" mnemonicParsing="false" onAction="#livrosDisponiveis" text="LIVROS DISPONÍVEIS" />
+                  <MenuItem fx:id="mnLivrosEmprestados" mnemonicParsing="false" onAction="#livrosEmprestados" text="LIVROS EMPRESTADOS" />
+                  <MenuItem fx:id="mnEmprestimosPeriodo" mnemonicParsing="false" onAction="#emprestimosPeriodo" text="EMPRÉSTIMOS POR PERÍODO" />
+                  <MenuItem fx:id="mnRelatorioQuitacao" mnemonicParsing="false" onAction="#relatorioQuitacao" text="RELATÓRIO DE QUITAÇÃO" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Text fx:id="txtAux" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="89.13671875">
+         <VBox.margin>
+            <Insets left="120.0" top="80.0" />
+         </VBox.margin>
+      </Text>
+   </children>  
+</VBox>

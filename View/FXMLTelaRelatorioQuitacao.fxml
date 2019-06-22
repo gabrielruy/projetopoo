@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLTelaRelatorioQuitacaoController">
+   <children>
+      <Pane prefHeight="264.0" prefWidth="421.0">
+         <children>
+         	<TextField fx:id="txtRa" layoutX="125.0" layoutY="120.0" onAction="#gerar" />            
+            <Label layoutX="96.0" layoutY="30.0" text="RELATÓRIO DE QUITAÇÃO">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblRa" layoutX="81.0" layoutY="124.0" text="RA:" />
+            <CubicCurve controlX1="-50.0" controlX2="-224.0" controlY1="-100.0" controlY2="102.0" endX="150.0" fill="#e8e8e8" layoutX="188.0" layoutY="60.0" startX="-150.0" stroke="#ddd9d9" />
+            <Button fx:id="btnGerar" layoutX="160.0" layoutY="180.0" mnemonicParsing="false" onAction="#gerar" prefHeight="25.0" prefWidth="82.0" text="GERAR" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
