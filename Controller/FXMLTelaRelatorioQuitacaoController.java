@@ -33,70 +33,74 @@ public class FXMLTelaRelatorioQuitacaoController {
 
 	@FXML
 	private void gerar() throws NumberFormatException, SQLException {
-		Aluno a = AlunoDAO.readWithRa(Integer.parseInt(txtRa.getText()));
-		ArrayList<Integer> empAtivos = ReservaDAO.emprestimosAtivos(Integer.parseInt(txtRa.getText()));
-
-		if (a != null) {
-			if (a.getStatus().toString().equals("Bloqueado")) {
-				InfoAlert.infoAlert("Aluno bloqueado", "O aluno inserido está bloqueado.");
-				txtRa.clear();				
-			} else if (!empAtivos.isEmpty()) {
-				InfoAlert.infoAlert("Aluno possui empréstimos", "O aluno inserido possui empréstimos ativos.");
-				txtRa.clear();
-			} else {
-				Document doc = new Document();
-				String arquivoPdf = "relatorio_quitacao.pdf";
-
-				try {
-					PdfWriter.getInstance(doc, new FileOutputStream(arquivoPdf));
-					doc.open();
-
-					Paragraph p = new Paragraph("DECLARAÇÃO");
-					p.setAlignment(1);
-					doc.add(p);
-					p = new Paragraph("  ");
-					doc.add(p);
-					p = new Paragraph("  ");
-					doc.add(p);
-
-					p = new Paragraph("        Declaramos para os devidos fins que o aluno(a) " + a.getNome()
-							+ ", matrícula " + a.getRa().toString() + ", "
-							+ "não possui pendências com a biblioteca do Instituto Federal de São Paulo - "
-							+ "Campus São Carlos. Declaramos também que a partir da presente data, "
-							+ "essa conta encontra-se encerrada.");
-					doc.add(p);
-
-					p = new Paragraph("  ");
-					doc.add(p);
-					p = new Paragraph("  ");
-					doc.add(p);
-					p = new Paragraph("  ");
-					doc.add(p);
-					p = new Paragraph("  ");
-					doc.add(p);
-
-					Date data = new Date();
-					SimpleDateFormat df;
-					df = new SimpleDateFormat("dd/MM/yyyy");
-					String dataString = df.format(data);
-
-					p = new Paragraph("São Carlos, " + dataString);
-					p.setAlignment(2);
-					doc.add(p);
-
-					doc.close();
-
-					Desktop.getDesktop().open(new File(arquivoPdf));
-					
-					fechaStage();
-
-				} catch (Exception e) {
-					InfoAlert.errorAlert("Erro", "Erro ao gerar relatório de quitação.");
-				}
-			}			
+		if(txtRa.getText().trim().isEmpty()) {
+			InfoAlert.infoAlert("Informe o RA", "Informe uma RA válido");
 		} else {
-			InfoAlert.infoAlert("RA inválido", "O RA inserido não é válido.");
-			txtRa.clear();
+			Aluno a = AlunoDAO.readWithRa(Integer.parseInt(txtRa.getText()));
+			ArrayList<Integer> empAtivos = ReservaDAO.emprestimosAtivos(Integer.parseInt(txtRa.getText()));
+
+			if (a != null) {
+				if (a.getStatus().toString().equals("Bloqueado")) {
+					InfoAlert.infoAlert("Aluno bloqueado", "O aluno inserido está bloqueado.");
+					txtRa.clear();				
+				} else if (!empAtivos.isEmpty()) {
+					InfoAlert.infoAlert("Aluno possui empréstimos", "O aluno inserido possui empréstimos ativos.");
+					txtRa.clear();
+				} else {
+					Document doc = new Document();
+					String arquivoPdf = "relatorio_quitacao.pdf";
+
+					try {
+						PdfWriter.getInstance(doc, new FileOutputStream(arquivoPdf));
+						doc.open();
+
+						Paragraph p = new Paragraph("DECLARAÇÃO");
+						p.setAlignment(1);
+						doc.add(p);
+						p = new Paragraph("  ");
+						doc.add(p);
+						p = new Paragraph("  ");
+						doc.add(p);
+
+						p = new Paragraph("        Declaramos para os devidos fins que o aluno(a) " + a.getNome()
+								+ ", matrícula " + a.getRa().toString() + ", "
+								+ "não possui pendências com a biblioteca do Instituto Federal de São Paulo - "
+								+ "Campus São Carlos. Declaramos também que a partir da presente data, "
+								+ "essa conta encontra-se encerrada.");
+						doc.add(p);
+
+						p = new Paragraph("  ");
+						doc.add(p);
+						p = new Paragraph("  ");
+						doc.add(p);
+						p = new Paragraph("  ");
+						doc.add(p);
+						p = new Paragraph("  ");
+						doc.add(p);
+
+						Date data = new Date();
+						SimpleDateFormat df;
+						df = new SimpleDateFormat("dd/MM/yyyy");
+						String dataString = df.format(data);
+
+						p = new Paragraph("São Carlos, " + dataString);
+						p.setAlignment(2);
+						doc.add(p);
+
+						doc.close();
+
+						Desktop.getDesktop().open(new File(arquivoPdf));
+						
+						fechaStage();
+
+					} catch (Exception e) {
+						InfoAlert.errorAlert("Erro", "Erro ao gerar relatório de quitação.");
+					}
+				}			
+			} else {
+				InfoAlert.infoAlert("RA inválido", "O RA inserido não é válido.");
+				txtRa.clear();
+			}
 		}
 	}
 

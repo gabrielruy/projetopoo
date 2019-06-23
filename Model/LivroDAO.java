@@ -103,7 +103,7 @@ private static Connection connection;
 			state = true;
 		} catch (SQLException e) {
 			if (e.getMessage().toString().contains("FK_RESERVA_LIVRO")) {
-				InfoAlert.errorAlert("Não é possível excluir o livro", "O livro está vinculado a uma reserva/empréstimo.");
+				InfoAlert.errorAlert("Não é possível excluir o livro", "O livro está vinculado a uma reserva/empréstimo ou já foi emprestado.");
 			} else
 				InfoAlert.errorAlert("Erro.", "Erro excluir o livro. \nLog de erro: " + e);
 		} 

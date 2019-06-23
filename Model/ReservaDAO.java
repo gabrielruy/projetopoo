@@ -49,7 +49,7 @@ public class ReservaDAO {
 				state = true;
 				
 			} catch (SQLException e) {
-				InfoAlert.errorAlert("Erro.", "Erro ao cadastrar o empréstimo. \nLog de erro: " + e);
+				InfoAlert.errorAlert("Erro.", "Erro ao cadastrar o empréstimo/reserva. \nLog de erro: " + e);
 			}		
 		}
 		
@@ -98,7 +98,7 @@ public class ReservaDAO {
 				reserva = r;
 			}			
 		} catch (SQLException e) {
-			InfoAlert.errorAlert("Erro.", "Erro ao consultar reserva. \nLog de erro: " + e);
+			InfoAlert.errorAlert("Erro.", "Erro ao consultar empréstimo/reserva. \nLog de erro: " + e);
 		} finally {
 			stmt.close();
 		}
